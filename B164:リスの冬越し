@@ -1,0 +1,48 @@
+間違え
+
+#include <stdio.h>
+int main(void){
+   int total,max=0,tate,yoko,kaisuu;
+   scanf("%d",&tate);
+   scanf("%d",&yoko);
+   int a[tate][yoko];
+   scanf("%d",&kaisuu);
+   for(int i=1;i<=tate;i++){
+       for(int j=1;j<=yoko;j++){
+           scanf("%d",&a[i-1][j-1]);
+       }
+   }
+    for(int i=1;i<=tate;i++){
+       for(int j=1;j<=yoko;j++){
+           for(int l=0;l<4;l++){
+                total=0;
+               
+               for(int m=0;m<kaisuu;m++){
+                //西の方向へ掘る
+                if(l==0 && j>=kaisuu ){
+                    total+=a[i-1][j-m-1];
+                }
+                //北の方向へ掘る
+                if(l==1 && i>=kaisuu){
+                    total=a[i-1-m][j-1];
+                }
+                //東の方向へ掘る
+                if(l==2 && yoko-j+1>=kaisuu){
+                    total=a[i-1][j-1+m];
+                }
+                //南の方向へ掘る
+                if(l==3 && tate-i+1>=kaisuu){
+                    total=a[i-1+m][j-1];
+                }
+                if(total>max){
+                    max=total;
+                }
+               }
+           }
+       }
+   }
+   printf("%d",max);
+   
+   
+    return 0;
+}
