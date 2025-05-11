@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main(void){
+    // 自分の得意な言語で
+    // Let's チャレンジ！！
+  int m,n,l;
+  scanf("%d",&m);
+  scanf("%d",&n);
+  scanf("%d",&l);
+  if(l>m){
+      printf("%d",l);
+      return 0;
+  }
+  printf("%d",l+n);
+    return 0;
+}
