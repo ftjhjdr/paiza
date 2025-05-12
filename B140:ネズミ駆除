@@ -1,0 +1,40 @@
+間違い
+#include <stdio.h>
+int main(void){
+    int tate,yoko;
+    scanf("%d",&tate);
+    scanf("%d",&yoko);
+    int kazu,maisuu;
+    scanf("%d",&kazu);
+    scanf("%d",&maisuu);
+    int a[tate][yoko];
+    for(int i=0;i<kazu;i++){
+       int first,second;
+       scanf("%d",&first);
+       scanf("%d",&second);
+      a[first][second]++;
+   }
+int nextnumber[maisuu];
+  int number,kiokux,kiokuy;
+  int max=0;
+    for(int i;i<kazu;i++){
+        int max=0;
+       for(int j=0;j<tate;j++){
+           for(int k=0;k<yoko;k++){
+   if(max<a[j][k]){
+max=a[j][k];
+kiokux=j;
+kiokuy=k;
+   }
+   }
+   }
+   　nextnumber[i]=max;
+       a[kiokux][kiokuy]=0;
+   }
+   int total=0;
+   for(int i=0;i<maisuu;i++){
+   total+=nextnumber[i];
+   }
+   printf("%d",total);
+return 0;
+}
